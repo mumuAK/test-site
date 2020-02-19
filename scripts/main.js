@@ -9,22 +9,22 @@ myImage.onclick = function() {
     }
 }
 
-let myButton = document.querySelector('button');
-myButton.onclick = function() {
-   setUserName();
-}
-
-let myHeading = document.querySelector('h1');
-
 function setUserName() {
   let myName = prompt('请输入你的名字。');
   if(!myName || myName === null) {
     setUserName();
   } else {
     localStorage.setItem('name', myName);
-    myHeading.innerHTML = 'Mozilla 酷毙了，' + myName;
+    myHeading.innerHTML = '你好，' + myName;
   }
 }
+
+let myButton = document.querySelector('button');
+myButton.onclick = function() {
+   setUserName();
+}
+
+let myHeading = document.querySelector('h1');
 
 if(!localStorage.getItem('name')) {
   setUserName();
